@@ -37,5 +37,5 @@ const UsersPage: React.FC = () => {
     </div>
   );
 };
-
+"async", "await", "getStaticProps()"
 export default UsersPage;
