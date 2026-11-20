@@ -22,8 +22,8 @@ const PostModal: React.FC<PostModalProps> = ({ isOpen, onClose, onSubmit }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-md w-96 shadow-lg">
+    <div className="fixed inset-0 bg-black/50 p-4 flex justify-center items-center z-50">
+      <div className="bg-white p-6 rounded-md w-96 max-w-full shadow-lg">
         <h2 className="text-xl font-semibold mb-4">Create Post</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input

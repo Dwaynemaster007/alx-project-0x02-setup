@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
   return (
-    <div>
-      <p>@2025 Copyright</p>
-    </div>
-  )
-}
+    <footer className="bg-gray-800 text-white text-center p-4">
+      <p>&copy; {new Date().getFullYear()} ALX Project 0x02</p>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import PostModal from '@/components/common/PostModal';
 import Card from '@/components/common/Card';
-import Header from '@/components/layout/Header';
-<Header/>
 type Post = {
   title: string;
   content: string;
@@ -34,12 +32,10 @@ const Home = () => {
         onSubmit={handleAddPost}
       />
 
+      {posts.length === 0 && <p className="text-gray-600">No posts yet. Create one to see it here.</p>}
       <div className="space-y-4">
         {posts.map((post, index) => (
-          <div key={index} className="border p-4 rounded shadow">
-            <h2 className="font-semibold text-lg">{post.title}</h2>
-            <p className="text-gray-700">{post.content}</p>
-          </div>
+          <Card key={index} title={post.title} content={post.content} />
         ))}
       </div>
     </div>

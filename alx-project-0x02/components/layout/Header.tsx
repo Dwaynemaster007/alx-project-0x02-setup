@@ -1,16 +1,26 @@
 import React from 'react';
 import Link from 'next/link';
 
+const links = [
+  { href: '/', label: 'Welcome' },
+  { href: '/home', label: 'Home' },
+  { href: '/posts', label: 'Posts' },
+  { href: '/users', label: 'Users' },
+  { href: '/about', label: 'About' },
+];
+
 const Header = () => {
   return (
-   <nav>
-    <ul className='flex justify-l gap-10 bg-blue-200 p-4'>
-      <li><Link href="/home" className='text-lg font-bold'>Home</Link></li>
-      <li><Link href="/about" className='text-lg font-bold'>About</Link></li>
-      <li><Link href="/posts" className='text-lg font-bold'>Posts</Link></li>
-    </ul>
-   </nav>
-  )
-}
+    <nav className="bg-blue-200 p-4">
+      <ul className="flex flex-wrap gap-x-10 gap-y-2">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link href={link.href} className="text-lg font-bold text-gray-900 hover:underline">{link.label}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
-export default Header
+export default Header;
